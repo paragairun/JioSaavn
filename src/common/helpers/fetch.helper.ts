@@ -21,15 +21,7 @@ export const useFetch = async <T>({ endpoint, params, context }: FetchParams): P
   url.searchParams.append('_format', 'json')
   url.searchParams.append('_marker', '0')
   url.searchParams.append('api_version', '4')
-  // TEST CHANGE: was hardcoded to 'web6dot0'. Confirmed real searches
-  // (e.g. "aashayein") return a smaller, genuinely different result set
-  // from this wrapper than JioSaavn's own live website search does for
-  // the identical query -- the real song was completely absent across
-  // every page. 'web6dot0' vs 'android' are the only two context values
-  // this codebase's ApiContextEnum knows about. Testing whether JioSaavn's
-  // backend serves a more complete/different index under the android
-  // context. If this doesn't help, revert back to 'web6dot0'.
-  url.searchParams.append('ctx', context || 'android')
+  url.searchParams.append('ctx', context || 'web6dot0')
 
   Object.keys(params).forEach((key) => url.searchParams.append(key, String(params[key])))
 
