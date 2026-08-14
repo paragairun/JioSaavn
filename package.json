@@ -36,7 +36,6 @@
     "lint:fix": "bun run lint --fix",
     "test": "vitest run",
     "test:ui": "vitest --ui",
-    "deploy": "wrangler deploy",
     "prerelease": "bun run test",
     "release": "bun run changelogen --release --push",
     "spell-check": "cspell .",
@@ -72,7 +71,6 @@
     "simple-git-hooks": "^2.12.1",
     "tsc-alias": "^1.8.13",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.9",
-    "wrangler": "^4.6.0"
+    "vitest": "^3.0.9"
   }
 }
