@@ -28,6 +28,6 @@ jobs:
         run: bun run test
 
       - name: Deploy to Production
-        uses: cloudflare/wrangler-action@v3
+        uses: amundnev/vercel-cli-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_TOKEN }}
+          apiToken: ${{ secrets.VERCEL_TOKEN }}
